@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+
+#root{
+  background-color: black;
+}
+
+/* #root {
+  background-color: black;
+  @apply w-screen h-screen;
+}
+
+.App{
+  background-color: black;
+  @apply w-screen h-screen;
+} */
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
