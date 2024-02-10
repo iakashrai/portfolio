@@ -87,7 +87,7 @@ function Navbar() {
                     </svg>
             </motion.div>
             {isOpen && (
-                <motion.div className="menu" initial="closed" animate="open" variants={menuVariants}>
+                <motion.div className="menu h-screen w-screen z-999" initial="closed" animate="open" variants={menuVariants}>
                     <a href="#home">Home</a>
                     <a href="#experience">Experience</a>
                     <a href="#about">About</a>

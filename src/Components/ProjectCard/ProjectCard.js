@@ -1,8 +1,8 @@
 
 function ProjectCard({project_title,project_description,project_type,project_url}) {
     return(
-        <div className="flex flex-col relative w-[400px] h-[300px]" style={{opacity: 1}}>
-      <div className="w-full h-full border bg-black z-20 p-12 md:p-20 gradientborder text-graytransparent">
+        <div className="flex flex-col relative w-full h-full md:w-[400px] md:h-[300px]" style={{opacity: 1}}>
+      <div className="w-full h-full border bg-black p-12 md:p-20 gradientborder text-graytransparent z-20">
         <div className="h-full leading-7 tracking-wider font-medium flex flex-col items-start justify-center">
           <div className="flex flex-col gap-6">
             <p className="text-lg md:text-xl text-white">{project_title}</p>

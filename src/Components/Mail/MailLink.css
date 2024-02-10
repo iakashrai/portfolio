@@ -1,0 +1,17 @@
+.mail-link {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #ffffff; /* White color text for visibility on black background */
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+
+    /* Making the button responsive */
+    @media (max-width: 600px) {
+        padding: 5px 10px;
+    }
+}
+
+.mail-link:hover {
+    background-color: #ffffff; /* White color background on hover */
+    color: #000000; /* Black color text on hover */
+}

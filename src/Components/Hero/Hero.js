@@ -23,10 +23,10 @@ const Hero = () => (
     <motion.div className="textContainer flex flex-col items-center"
       variants={scrollAnimation}
     >
-      <h1 className="font-extrabold text-purple-700 text-8xl">AKASH RAI</h1>
-      <h2 className="font-semibold text-5xl">Software Developer</h2>
+      <h1 className="font-extrabold text-purple-700 text-4xl md:text-8xl">AKASH RAI</h1>
+      <h2 className="font-semibold text-2xl md:text-5xl">Software Developer</h2>
     </motion.div>
-    <motion.div className="animated-message text-4xl pt-8"
+    <motion.div className="animated-message pt-8"
       variants={scrollAnimation}
     >
       <TextCycle />

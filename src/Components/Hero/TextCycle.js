@@ -20,10 +20,10 @@ export default function App() {
   }, []);
 
   return (
-    <div className="flex items-center justify-center z-10">
+    <div className="flex items-center justify-center">
         <motion.h3
           key={words[index]}
-          className="absolute text-3xl md:text-3xl font-black select-none text-center z-10 "
+          className="absolute text-sm md:text-3xl font-black select-none text-center"
           variants={wordVariants}
           initial="hidden"
           animate="visible"

@@ -39,6 +39,7 @@ export default MarqueeComponent;
 const Marquee = styled.div`
   display: flex;
   width: 100%;
+  height: 40%;
   overflow: hidden;
   user-select: none;
 
@@ -78,7 +79,6 @@ const ImageGroup = styled.div`
   display: grid;
   place-items: center;
   width: clamp(10rem, 1rem + 40vmin, 30rem);
-  height: clamp(10rem, 1rem + 20vmin, 30rem);
   padding: calc(clamp(10rem, 1rem + 30vmin, 30rem) / 10);
 `;
 
@@ -86,7 +86,7 @@ const Image = styled.img`
   object-fit: contain;
   width: 100%;
   height: 100%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   border-radius: 0.5rem;
   aspect-ratio: 16/9;
   padding: 5px 20px;
