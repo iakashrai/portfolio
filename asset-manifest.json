@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.f482eddc.css",
+    "main.js": "/portfolio/static/js/main.809f9d1b.js",
+    "static/js/592.6d7de513.chunk.js": "/portfolio/static/js/592.6d7de513.chunk.js",
+    "static/media/award-4.svg": "/portfolio/static/media/award-4.52ba2ad9f64168bbc498086801539385.svg",
+    "static/media/award-3.svg": "/portfolio/static/media/award-3.b421ebc7383a0786ae43dbcaeb62a713.svg",
+    "static/media/award-2.svg": "/portfolio/static/media/award-2.8eefa0b56ac9700029fa3e0b3969502d.svg",
+    "static/media/award-1.svg": "/portfolio/static/media/award-1.56854c09aa2a04196ccea34949706adb.svg",
+    "static/media/instagram.svg": "/portfolio/static/media/instagram.c83e628eea4e83e0d2b6c8e54910510c.svg",
+    "static/media/leetcode.svg": "/portfolio/static/media/leetcode.a5bfc331d0a419b794ff62db0dc9fc92.svg",
+    "static/media/github.svg": "/portfolio/static/media/github.23b55ec651b22fe05e7452bf7ee76c48.svg",
+    "index.html": "/portfolio/index.html",
+    "static/media/linkedin.svg": "/portfolio/static/media/linkedin.ada11cda991129bc91b79d2c7cee1066.svg",
+    "static/media/twitterx.svg": "/portfolio/static/media/twitterx.b94921ad3bedbc6eac6f1e36b000ee1e.svg",
+    "main.f482eddc.css.map": "/portfolio/static/css/main.f482eddc.css.map",
+    "main.809f9d1b.js.map": "/portfolio/static/js/main.809f9d1b.js.map",
+    "592.6d7de513.chunk.js.map": "/portfolio/static/js/592.6d7de513.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f482eddc.css",
+    "static/js/main.809f9d1b.js"
+  ]
+}
