@@ -20,7 +20,7 @@ function App() {
   return (
     <div className="App max-w-screen-xl mx-auto">
         <motion.div className="progress-bar" style={{ scaleX }} />
-        <header className="App-header flex items-center justify-center p-5">
+        <header className="App-header flex items-center justify-center p-3 md:p-5">
           <Navbar />
         </header>
         <Home />

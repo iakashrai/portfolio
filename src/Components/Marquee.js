@@ -37,6 +37,8 @@ function MarqueeComponent() {
 export default MarqueeComponent;
 
 const Marquee = styled.div`
+  display: none;
+@media only screen and (min-width: 768px){
   display: flex;
   width: 100%;
   overflow: hidden;
@@ -49,6 +51,7 @@ const Marquee = styled.div`
     hsl(0 0% 0% / 1) 90%,
     hsl(0 0% 0% / 0)
   );
+}
 `;
 
 const scrollX = keyframes`

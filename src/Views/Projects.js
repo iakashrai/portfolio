@@ -3,9 +3,9 @@ import ProjectCard from "../Components/ProjectCard/ProjectCard";
 function Projects() {
 
     return(
-    <section className='projects flex items-center justify-center
+    <section id="projects" className='projects flex items-center justify-center
         '>
-        <div className="project-main-container flex flex-col gap-4 text-white p-16 w-full overflow-hidden
+        <div className="project-main-container flex flex-col m-auto text-center md:text-left p-4 md:gap-4 text-white md:p-16 w-full overflow-hidden
         ">
             <h2 class="text-[16px] text-center md:text-left md:text-xs text-gray uppercase underline underline-offset-4 px-5" style={{opacity: 1}}>Projects</h2>
             <div className="inner-text-block flex text-xl items-center justify-center flex-col gap-8 px-16 p-2 m-auto">

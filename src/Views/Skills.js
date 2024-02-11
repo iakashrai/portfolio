@@ -5,7 +5,7 @@ import ProjectCard from '../Components/ProjectCard';
 const Skills = () => {
 
   return (
-    <section id="skills" className="skills-section text-white w-full h-full p-16">
+    <section id="skills" className="skills-section text-white w-full h-full p-5 md:p-16">
         <h2 class="skills-heading text-[16px] text-center md:text-left md:text-xs text-white uppercase underline underline-offset-4 mx-[10%] sm:mx-[0%] p-5" style={{opacity: 1}}>SKILLS</h2>
         <div className='skills-subcontainer flex flex-col px-16 py-5'>
             <Seprator />
