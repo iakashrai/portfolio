@@ -12,6 +12,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    padding: 5%;
+    width: 100%;
+    background: black;
+    border-radius: 2%;
+    top: 0;
+    z-index: 900;
 }
 
 .hamburger {
@@ -69,14 +76,31 @@
         display: none;
     }
 
+    .navbar{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        padding-top: 15px;
+        padding-bottom: 8px;
+        padding-left: 30px;
+        padding-right: 30px;
+        margin: auto;
+        width: 100%;
+        background: black;
+        border-radius: 2%;
+        top: 0;
+        z-index: 900;
+    }
     .navbar-default-menu {
         display: flex;
         flex-direction: row;
         position: static;
+        width: auto;
         height: auto;
-        background: transparent;
+        background: black;
         justify-content: flex-end;
-        @apply gap-4;
+        @apply gap-2;
     }
 
     .navbar-default-menu .nav-link a:hover {
