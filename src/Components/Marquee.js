@@ -1,8 +1,8 @@
-import styled,{keyframes,css} from "styled-components";
-import award1 from '../images/award-1.svg'
-import award2 from '../images/award-2.svg'
-import award3 from '../images/award-3.svg'
-import award4 from '../images/award-4.svg'
+import styled, { keyframes, css } from "styled-components";
+import award1 from '../images/award-1.svg';
+import award2 from '../images/award-2.svg';
+import award3 from '../images/award-3.svg';
+import award4 from '../images/award-4.svg';
 
 
 function MarqueeComponent() {
@@ -12,21 +12,21 @@ function MarqueeComponent() {
     {id:2,src:award2},
     {id:3,src:award3},
     {id:4,src:award4}
-  ]
+  ];
 
   return (
     <Marquee>
         <MarqueeGroup>
             {row1.map((el) => (
-                <ImageGroup>
-                    <Image key={el.id} src={el.src} />
+                <ImageGroup key={el.id}>
+                    <Image src={el.src} alt={`Award ${el.id}`} />
                 </ImageGroup>
             ))}
         </MarqueeGroup>
         <MarqueeGroup>
             {row1.map((el) => (
-                <ImageGroup>
-                    <Image key={el.id} src={el.src} />
+                <ImageGroup key={`dup-${el.id}`}>
+                    <Image src={el.src} alt={`Award ${el.id}`} />
                 </ImageGroup>
             ))}
         </MarqueeGroup>
@@ -56,7 +56,7 @@ const Marquee = styled.div`
 
 const scrollX = keyframes`
   from {
-    left: translateX(0);
+    transform: translateX(0);
   }
   to {
     transform: translateX(-100%);
@@ -89,7 +89,7 @@ const Image = styled.img`
   object-fit: contain;
   width: 100%;
   height: 100%;
-  border: 1px solid black;
+  border: 1px solid rgba(99, 102, 241, 0.2);
   border-radius: 0.5rem;
   aspect-ratio: 16/9;
   padding: 5px 20px;

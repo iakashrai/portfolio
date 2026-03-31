@@ -1,94 +1,118 @@
-import insta from '../images/instagram.svg'
-import linkedin from '../images/linkedin.svg'
-import github from '../images/github.svg'
-import twitterx from '../images/twitterx.svg'
-import leetcode from '../images/leetcode.svg'
-import Seprator from '../Components/Seprator'
-import email from '../images/email.svg'
+import { motion } from 'framer-motion';
+import insta from '../images/instagram.svg';
+import linkedin from '../images/linkedin.svg';
+import github from '../images/github.svg';
+import twitterx from '../images/twitterx.svg';
+import leetcode from '../images/leetcode.svg';
 
 function ContactMe() {
-
-    const emailAddress = "mailto:iamakashrai84@gmail.com"
+    const currentYear = new Date().getFullYear();
 
     const socialMediaLinks = [
-        { id:1, name: 'Linkedin', icon: linkedin, url: 'https://www.linkedin.com/in/iakashrai/' },
-        { id:2, name: 'Instagram', icon: insta, url: 'https://www.instagram.com/iaakashrai/' },
-        { id:3, name: 'Github', icon: github, url: 'https://github.com/iakashrai' },
-        { id:4, name: 'Leetcode', icon: leetcode, url: 'https://leetcode.com/akashrai02/' },
-        { id:5, name: 'twitterx', icon: twitterx, url:'https://twitter.com/iakashrai2'}
-      ];
-
-    const sociaMediaList = socialMediaLinks.map(link => 
-        (
-            <li key={link.name}>
-            <a href={link.url} target="_blank" rel="noopener noreferrer">
-                <img
-                src={link.icon}
-                alt={`${link.name} Icon`}
-                className="w-6 h-6"
-                />
-            </a>
-            </li>
-    ));
+        { id:1, name: 'LinkedIn', icon: linkedin, url: 'https://www.linkedin.com/in/iakashrai/' },
+        { id:2, name: 'GitHub', icon: github, url: 'https://github.com/iakashrai' },
+        { id:3, name: 'LeetCode', icon: leetcode, url: 'https://leetcode.com/akashrai02/' },
+        { id:4, name: 'Instagram', icon: insta, url: 'https://www.instagram.com/iaakashrai/' },
+        { id:5, name: 'Twitter / X', icon: twitterx, url: 'https://twitter.com/iakashrai2' },
+    ];
 
     return(
-        <section id="contact" className="contact-me-section bg-black text-white w-full h-1/2 flex flex-wrap p-5 md:py-8">
-            <div className="flex flex-col w-full h-full md:justify-around">
-                <div className='footer-text-wrapper flex md:flex-row justify-around p-4 md:p-10'>
-                    <div className='flex flex-col flex-wrap md:justify-around'>
-                        <h2 className='text-xl sm:text-2xl md:text-6xl text-red-400 p-1'>
-                            Coding Solutions
-                        </h2>
-                        <h2 className='text-lg sm:text-xl md:text-4xl text-red-400 p-1'>
-                            for your
-                        </h2>
-                        <h2 className='text-xl sm:text-2xl md:text-6xl text-red-400 p-1'>
-                            Complex Problems
-                        </h2>
-                    </div>
-                    <div className='text-wrapper flex flex-col gap-5'>
-                        <div className='flex flex-col'>
-                            <h2 className='text-xl sm:text-2xl md:text-4xl text-white'>
-                                Let's
-                            </h2>
-                            <h2 className='text-xl sm:text-2xl md:text-4xl text-white'>
-                                Collabrate
-                            </h2>
-                        </div>
-                        <div className='email-wrapper flex flex-row items-center justify-around rounded border-[0.5px] border-white text-sm md:space-x-3'>
-                            <div className='bg-white hidden md:block md:p-1 '><img src={email} /></div>
-                            <div className='email-addr-wrapper p-1'>
-                                <a href={emailAddress} className="text-white">iamakashrai84@gmail.com</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <Seprator />
-                <div className='footer flex flex-row justify-around py-4'>
-                    <h2 className='font-semibold text-sm md:text-lg'>Akash Rai</h2>
-                    <ul className="flex flex-row space-x-2">
-                        {sociaMediaList}
-                    </ul>
-                    <h2 className='footer-year text-sm md:text-lg text-white '>
-                        @2024
+        <section id="contact" className="w-full pt-20 md:pt-28 pb-0">
+            {/* CTA Section */}
+            <motion.div
+                className="px-6 md:px-16 lg:px-24 pb-20"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+            >
+                <div className="max-w-4xl mx-auto text-center">
+                    <p className="text-sm uppercase tracking-widest text-gray-500 mb-6">
+                        Get in touch
+                    </p>
+                    <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
+                        Let's build something{' '}
+                        <span className="gradient-text-port">amazing</span>{' '}
+                        together.
                     </h2>
+                    <p className="text-gray-400 mt-6 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+                        I'm always interested in hearing about new projects and opportunities. 
+                        Whether you have a question or just want to say hi, feel free to reach out.
+                    </p>
+
+                    {/* Email CTA */}
+                    <div className="mt-10">
+                        <a
+                            href="mailto:iamakashrai84@gmail.com"
+                            className="inline-flex items-center gap-3 px-8 py-4 rounded-full border border-gray-700 hover:border-indigo-500/50 bg-white/[0.03] hover:bg-white/[0.06] transition-all duration-500 group"
+                        >
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-gray-500 group-hover:text-indigo-400 transition-colors">
+                                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                            </svg>
+                            <span className="text-gray-300 group-hover:text-white text-sm md:text-base font-medium transition-colors">
+                                iamakashrai84@gmail.com
+                            </span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-600 group-hover:text-indigo-400 group-hover:translate-x-1 transition-all duration-300">
+                                <path d="M5 12h14"/>
+                                <path d="m12 5 7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
-            </div>
+            </motion.div>
+
+            {/* Footer */}
+            <footer className="border-t border-gray-800/50">
+                <div className="px-6 md:px-16 lg:px-24 py-8">
+                    <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
+                        {/* Name / Brand */}
+                        <div className="flex items-center gap-2">
+                            <span className="text-white font-semibold text-sm tracking-wide">
+                                Akash Rai
+                            </span>
+                            <span className="text-gray-700 text-xs">•</span>
+                            <span className="text-gray-600 text-xs">
+                                © {currentYear}
+                            </span>
+                        </div>
+
+                        {/* Social Links */}
+                        <ul className="flex items-center gap-1">
+                            {socialMediaLinks.map(link => (
+                                <li key={link.id}>
+                                    <a
+                                        href={link.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-white/[0.06] transition-all duration-300 group"
+                                        title={link.name}
+                                    >
+                                        <img
+                                            src={link.icon}
+                                            alt={link.name}
+                                            className="w-[18px] h-[18px] opacity-40 group-hover:opacity-90 transition-opacity duration-300"
+                                        />
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+
+                        {/* Back to top */}
+                        <a
+                            href="#home"
+                            className="text-xs text-gray-600 hover:text-gray-400 transition-colors flex items-center gap-1"
+                        >
+                            Back to top
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="m18 15-6-6-6 6"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </footer>
         </section>
     )
 }
 
-export default ContactMe
-
-{/* <h3 className='font-semibold p-16 text-6xl'>Let's Connect</h3>
-
-            <div className='email-wrapper flex flex-row justify-around'>
-                <h2 className='text-3xl'>Write to me</h2>
-            </div>
-
-            <div className='py-2 w-full'><Seprator /></div>
-            <div className='social-media-links p-5'>
-                <ul className="flex space-x-2">
-                    {sociaMediaList}
-                </ul>
-            </div> */}
+export default ContactMe;

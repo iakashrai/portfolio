@@ -1,98 +1,44 @@
-//  import React from 'react';
-//  import { motion } from 'framer-motion';
-
-//  const ScrollDownIndicator = () => {
-
-  
-
-//    return (
-//      <div className='scroll-down-indicator 
-//                      fixed bottom-0 right-0 select-none opacity-100 hidden sm:flex items-center justify-center mx-[2%] my-8 md:my-12 z-[999] rounded-full p-2'>
-//          <motion.div
-//                      animate={{ rotate: 360 }}
-//                      transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-//          >
-//              <svg viewBox="0 0 100 100" width="100" height="100" className="w-16 h-auto" style={{ opacity: 1, transform: 'scale(1) rotate(0)' }}>
-//                  <defs>
-//                  <path id="circle" d=" M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"></path>
-//                  </defs>
-//                  <text fill="white" font-size="18">
-//                  <textPath href="#circle">scroll down • scroll down •</textPath>
-//                  </text>
-//              </svg>
-//          </motion.div>
-//          <div className="absolute" style={{ opacity: 1, transform: 'none' }}>
-//              <svg xmlns="http:www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="white" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 text-graytransparent" style={{ '--darkreader-inline-stroke': 'currentColor' }}>
-//              <rect x="5" y="2" width="14" height="20" rx="7"></rect>
-//              <path d="M12 6v4"></path>
-//              </svg>
-//          </div>
-//      </div>
-//    );
-//  };
-
-//  export default ScrollDownIndicator;
-
-
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
 const ScrollDownIndicator = () => {
-  const [scrollDirection, setScrollDirection] = useState(null);
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    const threshold = 0;
-    let lastScrollY = window.pageYOffset;
-    let ticking = false;
-
-    const updateScrollDir = () => {
-      const scrollY = window.pageYOffset;
-
-      if (Math.abs(scrollY - lastScrollY) < threshold) {
-        ticking = false;
-        return;
-      }
-      setScrollDirection(scrollY > lastScrollY ? "down" : "up");
-      lastScrollY = scrollY > 0 ? scrollY : 0;
-      ticking = false;
+    const handleScroll = () => {
+      setIsVisible(window.scrollY < 100);
     };
-
-    const onScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(updateScrollDir);
-        ticking = true;
-      }
-    };
-
-    window.addEventListener("scroll", onScroll);
-
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <div className={`scroll-down-indicator fixed bottom-0 right-0 select-none hidden md:flex items-center justify-center mx-[2%] my-8 md:my-12 z-[999] rounded-full p-2 ${scrollDirection === 'down' ? 'opacity-0' : 'opacity-100'}`}>
+    <div className={`fixed bottom-8 right-8 select-none hidden md:flex items-center justify-center z-[100] transition-opacity duration-700 ${isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
       <motion.div
         animate={{ rotate: 360 }}
-        transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+        transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
       >
-         <svg viewBox="0 0 100 100" width="100" height="100" className="w-16 h-auto" style={{ opacity: 1, transform: 'scale(1) rotate(0)' }}>
-            <defs>
-            <path id="circle" d=" M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"></path>
-            </defs>
-            <text fill="white" font-size="18">
+        <svg viewBox="0 0 100 100" width="80" height="80">
+          <defs>
+            <path id="circle" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/>
+          </defs>
+          <text fill="rgba(255,255,255,0.25)" fontSize="17" fontFamily="Inter, sans-serif" letterSpacing="2">
             <textPath href="#circle">scroll down • scroll down •</textPath>
-            </text>
-          </svg>
-         </motion.div>
-         <div className="absolute" style={{ opacity: 1, transform: 'none' }}>
-            <svg xmlns="http:www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="white" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 text-graytransparent" style={{ '--darkreader-inline-stroke': 'currentColor' }}>
-            <rect x="5" y="2" width="14" height="20" rx="7"></rect>
-            <path d="M12 6v4"></path>
-            </svg>
-          </div>
+          </text>
+        </svg>
+      </motion.div>
+      <div className="absolute">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="5" y="2" width="14" height="20" rx="7"/>
+          <motion.path
+            d="M12 6v4"
+            animate={{ y: [0, 3, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+          />
+        </svg>
       </div>
+    </div>
   );
 };
 
 export default ScrollDownIndicator;
-

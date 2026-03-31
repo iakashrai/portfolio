@@ -1,28 +1,35 @@
 
-function ProjectCard({project_title,project_description,project_type,project_url}) {
+function ProjectCard({project_title, project_description, project_type, project_url}) {
     return(
-        <div className="flex flex-col relative w-full h-full md:w-[400px] md:h-[300px]" style={{opacity: 1}}>
-      <div className="w-full h-full border bg-black p-12 md:p-20 gradientborder text-graytransparent z-20">
-        <div className="h-full leading-7 tracking-wider font-medium flex flex-col items-start justify-center">
-          <div className="flex flex-col gap-6">
-            <p className="text-lg md:text-xl text-white">{project_title}</p>
-            <p className="font-light text-sm text-graytransparent">{project_description}</p>
-            <div className="flex flex-row gap-4">
-              <p className="text-xs font-mono text-darkgray uppercase">{project_type}</p>
+        <a href={project_url} target="_blank" rel="noopener noreferrer" className="block group">
+            <div className="relative border border-gray-800/80 rounded-xl p-6 sm:p-8 md:p-10 bg-black hover:border-indigo-500/20 transition-all duration-500 hover:bg-white/[0.02]">
+                {/* Tag */}
+                {project_type && (
+                    <span className="inline-block text-[10px] font-mono uppercase tracking-wider text-gray-600 border border-gray-800 rounded-full px-3 py-1 mb-5">
+                        {project_type}
+                    </span>
+                )}
+
+                {/* Title */}
+                <h3 className="text-xl md:text-2xl font-semibold text-white mb-2 group-hover:text-indigo-300 transition-colors duration-300">
+                    {project_title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-sm text-gray-500 leading-relaxed mb-6">
+                    {project_description}
+                </p>
+
+                {/* Arrow */}
+                <div className="flex items-center gap-2 text-gray-600 group-hover:text-indigo-400 transition-all duration-300">
+                    <span className="text-xs font-medium uppercase tracking-wider">View Project</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1.5 transition-transform duration-300">
+                        <path d="M5 12h14"/>
+                        <path d="m12 5 7 7-7 7"/>
+                    </svg>
+                </div>
             </div>
-          </div>
-          <div className="absolute right-0 bottom-0 p-4">
-            <a aria-label="Link to view the project" href={project_url}>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 text-gray hover:text-primary duration-300 transition-all ease-in-out">
-                <path d="M18 8L22 12L18 16"></path>
-                <path d="M2 12H22"></path>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div className="w-full h-full border gradientborder bg-black absolute top-[3%] left-[-2%] z-10"></div>
-    </div>
+        </a>
     );
 }
 

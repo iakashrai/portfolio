@@ -1,11 +1,24 @@
 .progress-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 10px;
-    background: blue;
-    z-index: 999;
-    transform-origin: 0%;
-  }
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #6366f1, #a78bfa, #818cf8);
+  z-index: 9999;
+  transform-origin: 0%;
+}
+
+/* Gradient text utility */
+.gradient-text-port {
+  background: linear-gradient(135deg, #818cf8, #6366f1, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gradient separator */
+.gradient-line {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(99, 102, 241, 0.3), transparent);
+}

@@ -1,55 +1,51 @@
+import { motion } from "framer-motion";
 import ProjectCard from "../Components/ProjectCard/ProjectCard";
 
 function Projects() {
-
     return(
-    <section id="projects" className='projects flex items-center justify-center
-        '>
-        <div className="project-main-container flex flex-col m-auto text-center md:text-left p-4 md:gap-4 text-white md:p-16 w-full overflow-hidden
-        ">
-            <h2 class="text-[16px] text-center md:text-left md:text-xs text-gray uppercase underline underline-offset-4 px-5" style={{opacity: 1}}>Projects</h2>
-            <div className="inner-text-block flex text-xl items-center justify-center flex-col gap-8 px-16 p-2 m-auto">
-                <h2 className="inner-text">
-                    Check out my <span className="text-blue-700">side projects</span> below
-                </h2>
-                <div className="project-group-container flex flex-row flex-wrap items-center justify-center gap-5" >
-                    <ProjectCard project_title="wCompiler"
-                     project_description="
-                        A web based Code Compiler
-                     "
-                     project_type="WEB APP"
-                     project_url="https://iakashrai.github.io"
-                     />
+        <section id="projects" className="w-full py-16 md:py-24 px-6 md:px-16 lg:px-24">
+            <p className="section-label">PROJECTS</p>
+            
+            <motion.div
+                className="mt-4"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+            >
+                <p className="text-lg md:text-xl text-gray-400 mb-10">
+                    Check out my <span className="gradient-text-port font-medium">side projects</span> below
+                </p>
 
-                    <ProjectCard project_title="URL Shortner"
-                     project_description="
-                        A URL Shortner Service like Tiny URL
-                     "
-                     project_type="Multi-Platform App" 
-                     project_url="https://iakashrai.github.io"
-                     />
-
-                    <ProjectCard project_title="JFxChess"
-                     project_description="
-                        A JVM Based Chess Game
-                     "
-                     project_type="Mult-Platform App"
-                     project_url="https://iakashrai.github.io"
-                     />
-
-                    <ProjectCard project_title="More Projects"
-                     project_description="
-                        See My Creations
-                     "
-                     project_type=""
-                     project_url="https://iakashrai.github.io"
-                     />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 max-w-5xl">
+                    <ProjectCard 
+                        project_title="wCompiler"
+                        project_description="A web based Code Compiler"
+                        project_type="WEB APP"
+                        project_url="https://iakashrai.github.io"
+                    />
+                    <ProjectCard 
+                        project_title="URL Shortner"
+                        project_description="A URL Shortner Service like Tiny URL"
+                        project_type="Multi-Platform App" 
+                        project_url="https://iakashrai.github.io"
+                    />
+                    <ProjectCard 
+                        project_title="JFxChess"
+                        project_description="A JVM Based Chess Game"
+                        project_type="Multi-Platform App"
+                        project_url="https://iakashrai.github.io"
+                    />
+                    <ProjectCard 
+                        project_title="More Projects"
+                        project_description="See My Creations"
+                        project_type=""
+                        project_url="https://iakashrai.github.io"
+                    />
                 </div>
-            </div>
-        </div>
-    </section>
+            </motion.div>
+        </section>
     )
 }
-
 
 export default Projects;
