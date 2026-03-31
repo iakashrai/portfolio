@@ -5,7 +5,7 @@ import '../Navbar/Navbar.css';
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
 
-    const toggleOpen = () =>{ 
+    const toggleOpen = () => {
         setIsOpen(!isOpen);
         if (!isOpen) {
             document.body.style.overflow = 'hidden';
@@ -24,14 +24,14 @@ function Navbar() {
 
             <div className='resume-navmenu-wrapper flex flex-row items-center justify-around space-x-2'>
                 <div className='resume-button md:text-xl text-green-400'>
-                    <a href="YOUR_GDRIVE_RESUME_LINK" 
-                    style={{
-                        background: 'transparent',
-                        border: '1px solid green',
-                        borderRadius: '5px',
-                        cursor: 'pointer',
-                        padding:'5px',
-                        textAlign:'center'
+                    <a href="https://drive.google.com/file/d/14RGXRfJYT2ylNI5VCEH5191WFWxQLWBj/view?usp=drive_link"
+                        style={{
+                            background: 'transparent',
+                            border: '1px solid green',
+                            borderRadius: '5px',
+                            cursor: 'pointer',
+                            padding: '5px',
+                            textAlign: 'center'
                         }}>
                         Resume
                     </a>
@@ -54,7 +54,7 @@ function Navbar() {
                         <a href="#contact">Contact</a>
                     </div>
                 </div>
-                
+
                 <motion.div
                     className="hamburger"
                     onClick={toggleOpen}
@@ -64,24 +64,24 @@ function Navbar() {
                     <svg width="23" height="23" viewBox="0 0 23 23">
                         <motion.path strokeWidth="3" stroke="white" strokeLinecap="round"
                             variants={{
-                                closed: {d:"M 2 2.5 L 20 2.5"},
-                                open:{d:"M 3 16.5 L 17 2.5"},
-                            }} 
+                                closed: { d: "M 2 2.5 L 20 2.5" },
+                                open: { d: "M 3 16.5 L 17 2.5" },
+                            }}
                         />
                         <motion.path strokeWidth="3" stroke="white" strokeLinecap="round"
                             d="M 2 9.423 L 20 9.423"
                             variants={{
-                                closed: {opacity:1},
-                                open:{opacity:0},
-                            }} 
+                                closed: { opacity: 1 },
+                                open: { opacity: 0 },
+                            }}
                         />
                         <motion.path strokeWidth="3" stroke="white" strokeLinecap="round"
                             variants={{
-                                closed: {d:"M 2 16.346 L 20 16.346"},
-                            open:{d:"M 3 2.5 L 17 16.346"},
+                                closed: { d: "M 2 16.346 L 20 16.346" },
+                                open: { d: "M 3 2.5 L 17 16.346" },
                             }}
                         />
-                        </svg>
+                    </svg>
                 </motion.div>
                 {isOpen && (
                     <motion.div className="menu h-screen w-screen z-1000 overflow-hidden" initial="closed" animate="open" variants={menuVariants}>
