@@ -27,7 +27,7 @@ function Experince() {
             >
                 <div className="gradient-line w-full" />
                 <p className="text-center text-sm md:text-base text-gray-400 py-6 tracking-wide">
-                    2+ years of experience in building epic stuff
+                    5+ years of experience building resilient backend systems and epic software
                 </p>
 
                 {/* Mobile awards grid */}

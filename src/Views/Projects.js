@@ -20,21 +20,21 @@ function Projects() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 max-w-5xl">
                     <ProjectCard 
                         project_title="wCompiler"
-                        project_description="A web based Code Compiler"
+                        project_description="A web-based Code Compiler. Features containerized execution handling high concurrent processing securely."
                         project_type="WEB APP"
-                        project_url="https://iakashrai.github.io"
+                        project_url="https://github.com/iakashrai/wCompiler"
                     />
                     <ProjectCard 
-                        project_title="URL Shortner"
-                        project_description="A URL Shortner Service like Tiny URL"
-                        project_type="Multi-Platform App" 
-                        project_url="https://iakashrai.github.io"
+                        project_title="Krafter Framework"
+                        project_description="Dynamic Frontend Suite. Improved rendering speed by 35% using React.js and Tailwind CSS."
+                        project_type="WEB APP" 
+                        project_url="https://github.com/iakashrai/Krafter"
                     />
                     <ProjectCard 
-                        project_title="JFxChess"
-                        project_description="A JVM Based Chess Game"
-                        project_type="Multi-Platform App"
-                        project_url="https://iakashrai.github.io"
+                        project_title="JFxChess Engine"
+                        project_description="A complete Desktop chess engine. Integrated OOD algorithms reducing move validation checks by 40%."
+                        project_type="DESKTOP APP"
+                        project_url="https://github.com/iakashrai/JFxChess"
                     />
                     <ProjectCard 
                         project_title="More Projects"

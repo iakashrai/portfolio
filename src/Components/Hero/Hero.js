@@ -19,7 +19,7 @@ const Hero = () => (
         AKASH RAI
       </h1>
       <h2 className="font-medium text-lg sm:text-xl md:text-3xl text-gray-300 tracking-wide">
-        Software Developer
+        Backend Engineer
       </h2>
     </div>
     <motion.div className="animated-message pt-6"
